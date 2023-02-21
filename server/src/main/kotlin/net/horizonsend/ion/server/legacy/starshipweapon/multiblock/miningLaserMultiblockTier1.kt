@@ -25,9 +25,25 @@ object miningLaserTier1Top : miningLaserMultiblockTier1() {
 		get() = TODO("Not yet implemented")
 
 	override fun LegacyMultiblockShape.buildStructure() {
-		at(+0, +0, +0).noteBlock()
-		at(+0, +1, +0).ironBlock()
-		at(+0, +2, +0).lodestone()
+		z(+0) {
+			y(-1) {
+				x(-1).anyWall()
+				x(+0).wireInputComputer()
+				x(+1).extractor()
+			}
+
+			y(+0) {
+				x(-1).anyWall()
+				x(+0).anyGlass()
+				x(+1).anyWall()
+			}
+
+			y(+1) {
+				x(-1).anyGlassPane()
+				x(+0).anyGlass()
+				x(+1).anyGlassPane()
+			}
+		}
 	}
 }
 object miningLaserTier1Bottom : miningLaserMultiblockTier1() {
